@@ -25,3 +25,12 @@
 /// Explanation: All array elements are non-negative. So the maximum
 /// subarray sum would be the sum of the entire array.
 ///</summary>
+
+/// <remarks>
+/// Discussed solution approaches
+/// 1) A brute force approach using three nested loops
+/// 2) Using two nested loops
+/// 3) Using divide and conquer idea similar to the merge sort
+/// 4) Using dynamic programming: Using single loop and O(n) space
+/// 5) Kadane algorithm: Using single loop and variables
+/// </remarks>
