@@ -34,3 +34,49 @@
 /// 4) Using dynamic programming: Using single loop and O(n) space
 /// 5) Kadane algorithm: Using single loop and variables
 /// </remarks>
+Console.WriteLine("Test");
+
+int[] x = new int[]{-4,5,7,-6,10,-15,3};
+Console.WriteLine(getMaxSubarraySum(x, x.Length));
+Console.WriteLine();
+Console.WriteLine(getMaxSubarraySum2(x, x.Length));
+//Brute force solution
+int getMaxSubarraySum(int[] X, int n)
+{
+    int maxSubarraySum = 0;
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = i; j < n; ++j)
+        {
+            int subarraySum = 0;
+            for( int k = i; k <= j; ++k)
+            {
+                subarraySum = subarraySum +X[k];
+            }
+            if(subarraySum > maxSubarraySum)
+            {
+                maxSubarraySum = subarraySum;
+            }
+        }
+    }
+    return maxSubarraySum;
+}
+
+int getMaxSubarraySum2(int[] X, int n)
+{
+    int maxSubarraySum = 0;
+    for (int i = 0; i < n; ++i)
+    {
+        int subarraySum = 0;
+        for (int j = i; j < n; ++j)
+        {
+            subarraySum = subarraySum + X[j];
+            if(subarraySum > maxSubarraySum)
+            {
+                maxSubarraySum = subarraySum;
+            }
+        }
+    }
+    return maxSubarraySum;
+}
+
